@@ -35,4 +35,11 @@ class AppleTest {
                 .isEqualTo(1);
     }
 
+    @Test
+    void filter_apple_with_ApplePredicate() {
+        Assertions.assertThat(
+                Apple.filterApples(apples, new AppleRedAndHeavyPredicate()).size())
+                .isEqualTo(1);
+    }
+
 }
