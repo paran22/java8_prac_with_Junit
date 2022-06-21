@@ -2,6 +2,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +39,18 @@ class AppleTest {
     @Test
     void filter_apple_with_ApplePredicate() {
         Assertions.assertThat(
-                Apple.filterApples(apples, new AppleRedAndHeavyPredicate()).size())
+                Apple.filterApples(apples, new FilterAppleRedAndHeavyPredicate()).size())
                 .isEqualTo(1);
     }
 
+    @Test
+    void print_apple_with_ApplePredicate() {
+        String color = "RED";
+
+        OutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        Apple.printApples(apples, new PrintAppleColor());
+        Assertions.assertThat(out.toString()).contains(color);
+    }
 }

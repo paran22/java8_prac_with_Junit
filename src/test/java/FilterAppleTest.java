@@ -1,10 +1,9 @@
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class FilterAppleTest {
 
-    FilterGreenAppleByColor filterGreenAppleByColor = new FilterGreenAppleByColor();
+    FilterAppleByColor filterGreenAppleByColor = new FilterAppleByColor();
     FilterAppleUnderFiftyWeight filterAppleUnderFiftyWeight = new FilterAppleUnderFiftyWeight();
 
     Apple greenAppleWithSixtyWeight = new Apple(Color.GREEN, 60);

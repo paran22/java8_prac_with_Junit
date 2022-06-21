@@ -38,7 +38,7 @@ public class Apple {
         return result;
     }
 
-    public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p) {
+    public static List<Apple> filterApples(List<Apple> inventory, FilterApplePredicate p) {
         List<Apple> result = new ArrayList<>();
         for (Apple apple : inventory) {
             if(p.test(apple)) {
@@ -46,5 +46,12 @@ public class Apple {
             }
         }
         return result;
+    }
+
+    public static void printApples(List<Apple> apples, PrintApplePredicate p) {
+        for (Apple apple : apples) {
+            String output = p.print(apple);
+            System.out.println(output);
+        }
     }
 }
