@@ -1,4 +1,4 @@
-public class AppleRedAndHeavyPredicate implements ApplePredicate {
+public class FilterAppleRedAndHeavyPredicate implements FilterApplePredicate {
 
     private final int WEIGHT = 50;
 
