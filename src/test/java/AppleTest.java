@@ -12,8 +12,8 @@ class AppleTest {
 
     @BeforeEach
     void createApples() {
-        Apple greenApple = new Apple(Color.GREEN);
-        Apple redApple = new Apple(Color.RED);
+        Apple greenApple = new Apple(Color.GREEN, 20);
+        Apple redApple = new Apple(Color.RED, 60);
 
         apples.add(greenApple);
         apples.add(redApple);
@@ -27,6 +27,12 @@ class AppleTest {
     @Test
     void filter_RED_apple() {
         Assertions.assertThat(Apple.filterApplesByColor(apples, Color.RED).size()).isEqualTo(1);
+    }
+
+    @Test
+    void filter_apple_under_50_weight() {
+        Assertions.assertThat(Apple.filterApplesUnderWeight(apples, 50).size())
+                .isEqualTo(1);
     }
 
 }
