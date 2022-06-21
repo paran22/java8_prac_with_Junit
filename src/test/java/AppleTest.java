@@ -21,7 +21,12 @@ class AppleTest {
 
     @Test
     void filter_GREEN_apple() {
-        Assertions.assertThat(Apple.filterGreenApples(apples).size()).isEqualTo(1);
+        Assertions.assertThat(Apple.filterApplesByColor(apples, Color.GREEN).size()).isEqualTo(1);
+    }
+
+    @Test
+    void filter_RED_apple() {
+        Assertions.assertThat(Apple.filterApplesByColor(apples, Color.RED).size()).isEqualTo(1);
     }
 
 }
