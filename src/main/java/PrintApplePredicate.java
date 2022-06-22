@@ -1,3 +1,3 @@
 public interface PrintApplePredicate {
-    String print(Apple apple);
+    void print(Apple apple);
 }
