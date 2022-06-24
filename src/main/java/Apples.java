@@ -11,10 +11,18 @@ public class Apples {
         Collections.addAll(apples, apple);
     }
 
-    public List<Apple> filterApples(FilterApplePredicate p) {
-        return apples.stream()
+    public Apples(List<Apple> apples) {
+        this.apples = apples;
+    }
+
+    public List<Apple> getApples() {
+        return apples;
+    }
+
+    public Apples filterApples(FilterApplePredicate p) {
+        return new Apples(apples.stream()
                 .filter(p::test)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
     }
 
     public void printApples(PrintApplePredicate p) {
