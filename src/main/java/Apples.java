@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Apples {
+public class Apples extends Fruits {
     private final List<Apple> apples;
 
     public Apples(Apple... apple) {
@@ -29,13 +29,4 @@ public class Apples {
         apples.forEach(p::print);
     }
 
-    public static <T> List<T> filter(List<T> list, Predicate<T> p) {
-        List<T> result = new ArrayList<>();
-        for (T e : list) {
-            if (p.test(e)) {
-                result.add(e);
-            }
-        }
-        return result;
-    }
 }
